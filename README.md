@@ -14,7 +14,8 @@ Sometimes we just want to requrest an api and display data in the view. Why not 
 
 ## Installation
 ```shell
-npm i vuetch -S
+yarn add vuetch
+# npm i vuetch -S
 ```
 
 ## Usage

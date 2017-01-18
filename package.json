@@ -2,9 +2,12 @@
   "name": "vuetch",
   "version": "0.0.0",
   "description": "A Vue component that fetches data from a http request.",
-  "main": "src/index.js",
+  "main": "dist/vuetch.common.js",
+  "module": "dist/vuetch.es5.js",
+  "unpkg": "dist/vuetch.js",
   "scripts": {
-    "test": "jest"
+    "test": "eslint && jest",
+    "build": "rollup -c && uglifyjs dist/vuetch.js > dist/vuetch.min.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/QingWei-Li/vuetch/issues"
   },
-  "homepage": "https://github.com/QingWei-Li/vuetch#readme"
+  "homepage": "https://github.com/QingWei-Li/vuetch#readme",
+  "devDependencies": {
+    "axios": "^0.15.3",
+    "jest": "^18.1.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "uglify-js": "^2.7.5",
+    "vue": "^2.1.10"
+  }
 }
