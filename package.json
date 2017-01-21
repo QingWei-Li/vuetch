@@ -1,6 +1,6 @@
 {
   "name": "vuetch",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Vue component that fetches data from a http request.",
   "main": "dist/vuetch.common.js",
   "module": "dist/vuetch.es5.js",
