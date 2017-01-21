@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <vuetch immediate loop :delay="1000" :default-data="{}" url="http://jsonplaceholder.typicode.com/posts/1" @onsuccess="success">
+      <template scope="props">
+        <pre>data: {{ props.data }}</pre>
+        <button @click="props.$load">abc</button>
+      </template>
+    </vuetch>
+  </div>
+</body>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="dist/vuetch.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+
+    methods: {
+      success (data) {
+        console.log(data)
+      }
+    }
+  })
+</script>
+</html>

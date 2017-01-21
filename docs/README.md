@@ -1,4 +1,4 @@
-# vuetch (Vue + fetch) [🚧 WIP]
+# vuetch (Vue + fetch)
 [![Build Status](https://travis-ci.org/QingWei-Li/vuetch.svg?branch=master)](https://travis-ci.org/QingWei-Li/vuetch)
 [![Coverage Status](https://coveralls.io/repos/github/QingWei-Li/vuetch/badge.svg?branch=master)](https://coveralls.io/github/QingWei-Li/vuetch?branch=master)
 [![npm](https://img.shields.io/npm/v/vuetch.svg)](https://www.npmjs.com/package/vuetch)
@@ -37,33 +37,17 @@ Vue.use(Vuetch)
 ```
 
 ## API
-### Props
+### props
 - url
 - options
 - http
 - loop
 - delay
 - tag
-- immediate
-- defaultData
-- manual
 
-### Events
+### events
 - onerror
 - onsuccess
-- oncomplete
-
-### Scoped props
-- data
-- error
-- $load
-- $polling
-
-## TODO
-- Documentation
-- Demo
-- Unit test
-- Publish
 
 ## License
 MIT
