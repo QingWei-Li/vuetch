@@ -10,6 +10,10 @@
     "dev": "rollup -cw",
     "build": "rollup -c --environment BUILD && uglifyjs dist/vuetch.js > dist/vuetch.min.js"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/QingWei-Li/vuetch.git"
