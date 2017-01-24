@@ -1,4 +1,4 @@
-import { assign } from './util'
+import { assign, warn } from './util'
 
 export default {
   name: 'Vuetch',
@@ -19,11 +19,7 @@ export default {
       default: 0
     },
     manual: Boolean,
-    immediate: Boolean,
-    tag: {
-      type: String,
-      default: 'div'
-    }
+    immediate: Boolean
   },
 
   data () {
@@ -45,12 +41,12 @@ export default {
 
   created () {
     if (this.manual) return
-    // start polling
+    // start poll
     if (this.immediate) {
       this.load()
       clearTimeout(this.loopId)
     }
-    this.polling()
+    this.poll()
   },
 
   methods: {
@@ -59,7 +55,7 @@ export default {
       const http = this.http || window.fetch
 
       http(this.url, assign({}, this.$options.defaultOptions, this.options))
-        .then(result => result.json ? result.json() : result)
+        .then(res => res.json ? res.json() : res)
         .then(data => {
           this.loading = false
           this.data = data
@@ -76,10 +72,10 @@ export default {
         })
     },
 
-    polling () {
+    poll () {
       clearTimeout(this.loopId)
       if (this.counter && this.counter++ > this.loop) return
-      this.loopId = setTimeout(_ => this.load(this.polling), this.delay)
+      this.loopId = setTimeout(_ => this.load(this.poll), this.delay)
     },
 
     emit (event, data) {
@@ -92,9 +88,14 @@ export default {
 
   render (h) {
     const slots = this.$scopedSlots.default
-    const { data, error, loading, load, polling } = this
-    const vnode = slots({ data, error, loading, $load: load, $polling: polling })
+    const { data, error, loading, load, poll } = this
+    const vnode = slots({ data, error, loading, $load: load, $poll: poll })
 
-    return Array.isArray(vnode) && vnode.length === 1 ? vnode[0] : h(this.tag, vnode)
+    if (Array.isArray(vnode) && vnode.length > 1) {
+      warn('Multiple root nodes returned from render function. Render function should return a single root node.')
+      return ''
+    } else {
+      return vnode[0]
+    }
   }
 }

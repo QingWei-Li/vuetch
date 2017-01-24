@@ -5,15 +5,27 @@
   <title>vuetch - A Vue component that fetches data from a http request.</title>
   <meta name="description" content="A Vue component that fetches data from a http request.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="custom.css">
 </head>
 <body>
   <div id="app"></div>
 </body>
+<script src="//unpkg.com/vue/dist/vue.min.js"></script>
+<script src="//unpkg.com/vuetch/dist/vuetch.min.js"></script>
 <script
-  src="//unpkg.com/docsify/lib/docsify.js"
+  src="//unpkg.com/docsify/lib/docsify.min.js"
   data-router
-  data-repo="https://github.com/QingWei-Li/vuetch"
+  data-load-sidebar
+  data-sub-max-level="6"
+  data-menu-toggle
+  data-repo="QingWei-Li/vuetch"
   data-name="vuetch">
+</script>
+<script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+<script>
+  Vue.filter('date', function (input) {
+    return input ? input.replace(/T|Z/g, ' ') : input
+  })
 </script>
 </html>

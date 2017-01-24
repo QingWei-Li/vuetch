@@ -4,12 +4,46 @@
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
+<style>
+  ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  blockquote {
+    margin-left: 0;
+    padding-left: 12px;
+    border-left: 4px solid #03a9f4;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 300;
+  }
+</style>
 <body>
   <div id="app">
-    <vuetch immediate loop :delay="1000" :default-data="{}" url="http://jsonplaceholder.typicode.com/posts/1" @onsuccess="success">
+    <vuetch :default-data="{}" :url="'/mock/npms.json?q=' + query">
       <template scope="props">
-        <pre>data: {{ props.data }}</pre>
-        <button @click="props.$load">abc</button>
+        <form>
+          <input type="search" v-model="query">
+          <button type="submit" @click.prevent="props.$load">search</button>
+        </form>
+
+        <div v-if="props.loading">loading...</div>
+        <ul>
+          <li v-for="pkg in props.data.results">
+            <h2>{{ pkg.package.name }}</h2>
+            <blockquote>{{ pkg.package.description }}</blockquote>
+            <a :href="pkg.package.links.npm">npm</a>
+            <a :href="pkg.package.links.repository">repository</a>
+          </li>
+        </ul>
       </template>
     </vuetch>
   </div>
@@ -20,11 +54,7 @@
   new Vue({
     el: '#app',
 
-    methods: {
-      success (data) {
-        console.log(data)
-      }
-    }
+    data: { query: '' }
   })
 </script>
 </html>

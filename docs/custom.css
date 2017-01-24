@@ -1,0 +1,57 @@
+.markdown-section table {
+  display: inline-table;
+}
+
+.demo {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.demo li {
+  list-style-type: none;
+}
+
+ul.demo {
+  margin: 0;
+  padding: 12px;
+}
+
+.demo-manual li {
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 12px;
+}
+
+.demo-manual h2 {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.demo-manual .loading {
+  text-align: center;
+}
+
+.demo-basic {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.demo-basic li {
+  flex-grow: 1;
+  width: 33%;
+  padding: 6px;
+}
+
+.demo-poll li {
+  border-bottom: 1px dashed #eee;
+  padding: 12px 0;
+}
+
+.demo-poll time {
+  float: right;
+}

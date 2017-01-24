@@ -1,8 +1,9 @@
 import Vuetch from './vuetch'
 
 Vuetch.install = function (Vue, opts = {}) {
-  Vuetch.defaultOptions = opts.options
+  Vuetch.defaultOptions = opts.defaultOptions
   Vuetch.props.defaultData.default = () => opts.defaultData
+  Vuetch.props.http.default = opts.http
   Vuetch.onerror = opts.onerror
   Vuetch.onsuccess = opts.onsuccess
   Vuetch.oncomplete = opts.oncomplete

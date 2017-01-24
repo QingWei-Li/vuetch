@@ -1,0 +1,7 @@
+- [Quick start](/)
+- Examples
+  - [basic](/examples/basic)
+  - [manual](/examples/manual)
+  - [poll](/examples/poll)
+  - [axios](/examples/axios)
+- [API](/api)

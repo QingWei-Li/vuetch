@@ -13,7 +13,7 @@ Sometimes we just want to requrest an api and display data in the view. Why not 
 - Simplify your code
 
 ## Installation
-```shell
+```bash
 yarn add vuetch
 # npm i vuetch -S
 ```
@@ -43,7 +43,6 @@ Vue.use(Vuetch)
 - http
 - loop
 - delay
-- tag
 - immediate
 - defaultData
 - manual
@@ -57,7 +56,7 @@ Vue.use(Vuetch)
 - data
 - error
 - $load
-- $polling
+- $poll
 
 ## TODO
 - Documentation
