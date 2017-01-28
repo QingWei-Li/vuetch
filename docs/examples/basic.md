@@ -1,27 +1,50 @@
 基本用法。
 
 ```html
-<vuetch url="https://unsplash.it/list">
+<vuetch url="https://api.github.com/users/QingWei-Li" :default-data="{}">
   <template scope="props">
-    <ul>
-      <li v-if="props.loading">loading...</li>
-      <li v-for="(o, $index) in props.data" v-if="$index < 12">
-        <img :src="o.post_url" :alt="o.filename">
-        <p>author: <a :href="o.author_url">{{ o.author }}</a></p>
-      </li>
-    </ul>
+    <p v-if="props.loading">loading...</p>
+    <div v-else>
+      <img :src="props.data.avatar_url" :alt="props.data.name">
+      <div>
+        <h2>{{ props.data.login }}</h2>
+        <h3>{{ props.data.name }}</h3>
+        <hr>
+        <p>
+          :earth_asia: <abbr>{{ props.data.location }}</abbr>
+        </p>
+        <p>
+          :email: <a :href="'mailto:' + props.data.email">{{ props.data.email }}</a>
+        </p>
+        <p>
+          :computer: <a :href="props.data.blog">{{ props.data.blog }}</a>
+        </p>
+      </div>
+    </div>
   </template>
 </vuetch>
 ```
 
-<vuetch url="https://unsplash.it/list">
+<vuetch url="https://api.github.com/users/QingWei-Li" :default-data="{}">
   <template scope="props">
-    <ul class="demo demo-basic">
-      <li v-if="props.loading">loading...</li>
-      <li v-for="(o, $index) in props.data" v-if="$index < 12">
-        <img :src="o.post_url" :alt="o.filename">
-        <p>author: <a :href="o.author_url">{{ o.author }}</a></p>
-      </li>
-    </ul>
+    <p class="demo demo-basic" v-if="props.loading">loading...</p>
+    <div v-else class="demo demo-basic">
+      <p class="warn" v-if="props.data.message">{{ props.data.message }}</p>
+      <img :src="props.data.avatar_url" :alt="props.data.name">
+      <div v-if="!props.data.message">
+        <h2>{{ props.data.login }}</h2>
+        <h3>{{ props.data.name }}</h3>
+        <hr>
+        <p>
+          :earth_asia: <abbr>{{ props.data.location }}</abbr>
+        </p>
+        <p>
+          :email: <a :href="'mailto:' + props.data.email">{{ props.data.email }}</a>
+        </p>
+        <p>
+          :computer: <a :href="props.data.blog">{{ props.data.blog }}</a>
+        </p>
+      </div>
+    </div>
   </template>
 </vuetch>

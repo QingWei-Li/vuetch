@@ -92,7 +92,7 @@ export default {
     const vnode = slots({ data, error, loading, $load: load, $poll: poll })
 
     if (Array.isArray(vnode) && vnode.length > 1) {
-      warn('Multiple root nodes returned from render function. Render function should return a single root node.')
+      warn('<vuetch> can only be used on a single element.')
       return ''
     } else {
       return vnode[0]

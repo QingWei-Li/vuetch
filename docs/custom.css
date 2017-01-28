@@ -17,6 +17,19 @@ ul.demo {
   padding: 12px;
 }
 
+.demo-basic img:not(.emoji) {
+  float: left;
+  height: 200px;
+  margin-right: 20px;
+}
+
+.demo-basic h2,
+.demo-basic h3,
+.demo-basic hr,
+.demo-basic p {
+  margin: .5em 0;
+}
+
 .demo-manual li {
   border-bottom: 1px dashed #eee;
   padding-bottom: 12px;
@@ -29,22 +42,6 @@ ul.demo {
 
 .demo-manual .loading {
   text-align: center;
-}
-
-.demo-basic {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.demo-basic li {
-  flex-grow: 1;
-  width: 33%;
-  padding: 6px;
 }
 
 .demo-poll li {
