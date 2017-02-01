@@ -11,15 +11,26 @@
 <body>
   <div id="app"></div>
 </body>
+<script>
+  var inject = function (src) {
+    var script = document.createElement('script')
+    script.src = src
+    document.body.appendChild(script)
+  }
+
+  if (!window.Promise) inject('//unpkg.com/es6-promise@4.0.5/dist/es6-promise.auto.min.js')
+  if (!window.fetch) inject('//unpkg.com/whatwg-fetch@2.0.2/fetch.js')
+</script>
 <script src="//unpkg.com/vue@2.1.10/dist/vue.js"></script>
-<script src="//unpkg.com/vuetch/dist/vuetch.js"></script>
 <script src="//unpkg.com/axios@0.15.3/dist/axios.min.js"></script>
+<script src="//unpkg.com/vuetch/dist/vuetch.js"></script>
+<script src="//unpkg.com/vueo"></script>
 <script
   src="//unpkg.com/docsify/lib/docsify.min.js"
   data-router
   data-load-sidebar
   data-sub-max-level="6"
-  data-menu-toggle
+  data-sidebar-toggle
   data-repo="QingWei-Li/vuetch"
   data-name="vuetch">
 </script>

@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/QingWei-Li/vuetch/issues"
   },
-  "homepage": "https://github.com/QingWei-Li/vuetch#readme",
+  "homepage": "https://qingwei-li.github.io/vuetch",
   "devDependencies": {
     "axios": "^0.15.3",
     "eslint": "^3.12.1",
